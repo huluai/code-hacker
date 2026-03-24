@@ -775,4 +775,4 @@ async def review_diff_text(old_code: str, new_code: str) -> str:
 
 # ─── 入口 ──────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
-    mcp.run(transport="stdio")
+    mcp.run(transport="sse", host="0.0.0.0", port=8005)

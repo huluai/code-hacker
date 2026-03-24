@@ -1,34 +1,28 @@
 {
   "servers": {
     "filesystem-command": {
-      "type": "stdio",
-      "command": "python",
-      "args": ["${workspaceFolder}/filesystem.py"]
+      "type": "sse",
+      "url": "http://localhost:8001/sse"
     },
     "git-tools": {
-      "type": "stdio",
-      "command": "python",
-      "args": ["${workspaceFolder}/git_tools.py"]
+      "type": "sse",
+      "url": "http://localhost:8002/sse"
     },
     "code-intel": {
-      "type": "stdio",
-      "command": "python",
-      "args": ["${workspaceFolder}/code_intel.py"]
+      "type": "sse",
+      "url": "http://localhost:8003/sse"
     },
     "memory-store": {
-      "type": "stdio",
-      "command": "python",
-      "args": ["${workspaceFolder}/memory_store.py"]
+      "type": "sse",
+      "url": "http://localhost:8004/sse"
     },
     "code-review": {
-      "type": "stdio",
-      "command": "python",
-      "args": ["${workspaceFolder}/code_review.py"]
+      "type": "sse",
+      "url": "http://localhost:8005/sse"
     },
     "code-refactor": {
-      "type": "stdio",
-      "command": "python",
-      "args": ["${workspaceFolder}/code_refactor.py"]
+      "type": "sse",
+      "url": "http://localhost:8006/sse"
     }
   }
 }

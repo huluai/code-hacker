@@ -461,17 +461,21 @@ async def search_files_ag(
     if not path.is_dir():
         return f"Error: Search path is not a directory: {search_path}"
     
+    # Get ag binary path from environment variable or use default
+    ag_bin = os.environ.get('AG_PATH', 'ag')
+
     # Check if ag is available
     try:
-        subprocess.run(['ag', '--version'], capture_output=True, check=True)
+        subprocess.run([ag_bin, '--version'], capture_output=True, check=True)
     except (subprocess.CalledProcessError, FileNotFoundError):
         return "Error: 'ag' (The Silver Searcher) is not installed. Please install it first:\n" \
                "  macOS: brew install the_silver_searcher\n" \
                "  Linux: apt-get install silversearcher-ag or yum install the_silver_searcher\n" \
-               "  Windows: choco install ag"
-    
+               "  Windows: choco install ag\n" \
+               "  Or set AG_PATH environment variable to the ag binary path."
+
     # Build ag command
-    ag_cmd = ['ag']
+    ag_cmd = [ag_bin]
     
     # Add case sensitivity flag
     if not case_sensitive:
@@ -543,4 +547,4 @@ async def search_files_ag(
 
 if __name__ == "__main__":
     # Initialize and run the server
-    mcp.run(transport='stdio')
+    mcp.run(transport='sse', host='0.0.0.0', port=8001)

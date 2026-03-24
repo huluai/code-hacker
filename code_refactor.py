@@ -266,4 +266,4 @@ async def ydiff_git_changes(project_dir: str, base: str = "HEAD~1", output_path:
 
 # ─── 入口 ──────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
-    mcp.run(transport="stdio")
+    mcp.run(transport="sse", host="0.0.0.0", port=8006)
