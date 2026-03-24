@@ -19,6 +19,16 @@
       "type": "stdio",
       "command": "python",
       "args": ["${workspaceFolder}/memory_store.py"]
+    },
+    "code-review": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["${workspaceFolder}/code_review.py"]
+    },
+    "code-refactor": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["${workspaceFolder}/code_refactor.py"]
     }
   }
 }
